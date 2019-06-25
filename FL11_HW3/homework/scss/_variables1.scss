@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Varela);
+$background-img: url("../img/m-h-day.jpg");
+$main-font: 'Varela', sans-serif;
+$section-font: 'Varela', sans-serif;
+$dark-theme-color: #222531;
+$text-color: #222531;
+$bg-color: #ffffff;
+$font-color: #222531;
+$button-color: #6B960C;
+$second-color-gradient: #14A0C7;
+$underline-color: #14A0C7;
+$white: #ffffff;
+$gray: lightgrey;
+$gradient: linear-gradient(to right, $button-color 0%, $underline-color 100%);
+
+@mixin button-style {
+  background-color: $button-color;
+  border: 1px;
+  border-radius: 3px;
+  color: $white;
+}
+
+$font-weights: (regular: 500, medium: 600, bold: 800, extra-bold: 900);
