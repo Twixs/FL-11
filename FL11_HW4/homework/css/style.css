@@ -1,0 +1,508 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header, main, footer {
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.header-wrap {
+	background: #000 url("../img/sample2.jpg") no-repeat;
+	background-size: 180%;
+	object-fit: fill;
+	height: 100vh;
+	background-position: center;
+	padding: 50px;
+}
+
+header {
+	overflow-x: hidden;
+	background-color: #E8E8E8;
+}
+
+header:after {
+	content: '';
+	display: block;
+	position: relative;
+	width: 0;
+	height: 0;
+	border-top: 300px solid black;
+	border-left: 100vw solid transparent;
+}
+
+.header, .nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: #fff;
+}
+
+.nav a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.header p {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.header ul li {
+	list-style: none;
+	padding: 0 25px;
+}
+
+.brand {
+	color: #fff;
+	text-align: center;
+	margin: 15%;
+}
+
+.brand h1 {
+	font-size: 52px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+}
+
+.brand h1 span {
+	font-size: 92px;
+}
+
+.brand p {
+	font-size: 18px;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 5%;
+}
+
+.navigation button {
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	padding: 15px 90px;
+	font-size: 16px;
+	z-index: 1;
+}
+
+.navigation button a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+main {
+	background-color: #E8E8E8;
+}
+
+.aside-text {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: -10%;
+	padding: 0 50px;
+}
+
+.aside-text p {
+	width: 35%;
+	font-size: 18px;
+}
+
+#white-text {
+	color: #FFFFFF;
+	z-index: 2;
+	margin-top: -10%;
+	font-size: 16px;
+}
+
+.article-header {
+	text-align: center;
+	font-size: 26px;
+	margin: 60px 0;
+}
+
+.article-block {
+	display: flex;
+	flex-direction: row;
+}
+
+.section-articles .article-block {
+	margin: 60px 50px;
+}
+
+.article-block .paragraph-block {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	text-align: center;
+	margin-left: 100px;
+}
+
+section.paragraph-block:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-left: 0;
+	margin-right: 100px;
+}
+
+.article-block .paragraph-block p {
+	padding: 20px 0;
+}
+
+.article-block .img-block-first,
+.article-block .img-block-second {
+	display: inline-block;
+	max-width: 50%;
+	height: auto;
+}
+
+.article-block .img-block-first img,
+.article-block .img-block-second img {
+	max-width: 100%;
+	overflow: auto;
+}
+
+.article-block .img-block-first::before {
+	content: '154 \2665';
+	text-align: center;
+	width: 55px;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: block;
+	position: absolute;
+	margin: 4% 0 0 10%;
+	padding: 5px
+}
+
+.article-block .img-block-first::after {
+	content: 'July 18 Spain';
+	display: block;
+	margin: -50px 0 0 20px;
+	color: #fff;
+	font-size: 16px
+}
+
+.article-block .img-block-second::before {
+	content: '172 \2665';
+	text-align: center;
+	width: 55px;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: block;
+	position: absolute;
+	margin: 4% 0 0 10%;
+	padding: 5px
+}
+
+.article-block .img-block-second::after {
+	content: 'January 15 South France';
+	display: block;
+	margin: -50px 0 0 20px;
+	color: #fff;
+	font-size: 16px
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 80px 50px;
+	background-color: #FFFFFF;
+}
+
+.gallery div {
+	display: inline-block;
+	max-width: 20%;
+	height: 50vh;
+	overflow: hidden;
+}
+
+.gallery div button {
+	z-index: 2;
+}
+
+.container {
+	position: relative;
+	width: 20%;
+}
+
+.container img {
+	width: auto;
+	height: 100%;
+}
+
+.container button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #097774;
+	opacity: 0.8;
+	color: white;
+	font-size: 16px;
+	padding: 12px 80px;
+	border: none;
+}
+
+.gallery .news-list-1::before {
+	content: '10 \2665';
+	font-size: 14px;
+	text-align: center;
+	width: 45px;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: block;
+	position: absolute;
+	margin: 20px 0 0 175px;
+	padding: 5px
+}
+
+.gallery .news-list-1::after {
+	content: 'January 18 Greece';
+	display: block;
+	position: absolute;
+	margin: -50px 0 0 20px;
+	color: #fff;
+	font-size: 16px
+}
+
+.gallery .news-list-2::before {
+	content: '35 \2665';
+	font-size: 14px;
+	text-align: center;
+	width: 45px;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: block;
+	position: absolute;
+	margin: 20px 0 0 175px;
+	padding: 5px
+}
+
+.gallery .news-list-2::after {
+	content: 'June 18 Italy';
+	display: block;
+	position: absolute;
+	margin: -50px 0 0 20px;
+	color: #fff;
+	font-size: 16px
+}
+
+.gallery .news-list-3::before {
+	content: '199 \2665';
+	font-size: 14px;
+	text-align: center;
+	width: 45px;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: block;
+	position: absolute;
+	margin: 20px 0 0 175px;
+	padding: 5px
+}
+
+.gallery .news-list-3::after {
+	content: 'December 11 USA';
+	display: block;
+	position: absolute;
+	margin: -50px 0 0 20px;
+	color: #fff;
+	font-size: 16px
+}
+
+.gallery .news-list-4::before {
+	content: '88 \2665';
+	font-size: 14px;
+	text-align: center;
+	width: 45px;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: block;
+	position: absolute;
+	margin: 20px 0 0 175px;
+	padding: 5px
+}
+
+.gallery .news-list-4::after {
+	content: 'May 25 Germany';
+	display: block;
+	position: absolute;
+	margin: -50px 0 0 20px;
+	color: #fff;
+	font-size: 16px
+}
+
+.load-news-button {
+	display: flex;
+	justify-content: space-around;
+	background-color: #FFFFFF;
+	padding-bottom: 50px
+}
+
+.load-news {
+	text-align: center;
+	align-self: center;
+	padding: 15px 130px;
+	background-color: #097774;
+	border: 0;
+	color: #fff;
+	font-size: 16px
+}
+
+p.newsletter-paragraph {
+	padding: 50px 50px 10px 50px
+}
+
+.newsletter {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding: 10px 0 50px 0
+}
+
+.newsletter p {
+	font-size: 26px;
+	margin-right: 20px
+}
+
+.newsletter button {
+	background-color: #097774;
+	border: 0;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 0 50px 0 10px
+}
+
+.newsletter input {
+	padding: 0 10px;
+	margin-right: 10px;
+	border: 1px solid #000000;
+	background-color: #E8E8E8
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 20px 30px
+}
+
+footer nav {
+	display: flex;
+	justify-content: space-between;
+	width: 20%
+}
+
+footer nav a {
+	text-decoration: none;
+	color: #000000;
+	font-size: 14px;
+	display: flex;
+	justify-content: flex-end
+}
+
+footer p {
+	font-size: 14px;
+	color: #9E9E9E
+}
+
+@media screen and (max-width:1199px) {
+	header:before {
+		padding: 57% 20px 0 720px
+	}
+
+	.aside-text p {
+	font-size: 16px
+	}
+
+	#white-text {
+		font-size: 12px
+	}
+
+	.article-block .paragraph-block {
+		font-size: 12px;
+	}
+	.article-block .img-block-first::before, 
+	.article-block .img-block-second::before {
+		margin: 1% 0 0 35%;
+	}
+
+	.gallery .news-list-1::before, 
+	.gallery .news-list-2::before, 
+	.gallery .news-list-3::before, 
+	.gallery .news-list-4::before {
+		margin: 4% 0 0 60%;
+	}
+
+	footer nav {
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+	}
+
+}
+
+@media screen and (min-width:1200px) {
+	.article-block .img-block-first::before,
+	.article-block .img-block-second::before {
+		margin: 1% 0 0 40%;
+	}
+
+	.gallery .news-list-1::before,
+	.gallery .news-list-2::before,
+	.gallery .news-list-3::before,
+	.gallery .news-list-4::before {
+		margin: 3% 0 0 75%;
+	}
+
+}
+
+@media screen and (min-width:1600px) {
+	.header-wrap {
+		background-size: 150%;
+	}
+
+	header:before {
+		padding: 1200px 20px 0 950px;
+	}
+
+	.brand {
+		margin: 15%;
+	}
+
+	#white-text {
+		margin-top: -5%;
+	}
+
+	.article-header {
+		text-align: center;
+		font-size: 26px;
+		margin: 60px 0;
+	}
+}
