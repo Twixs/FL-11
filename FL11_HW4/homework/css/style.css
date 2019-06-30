@@ -22,7 +22,7 @@ header {
 	background-color: #E8E8E8;
 }
 
-header:after {
+header::after {
 	content: '';
 	display: block;
 	position: relative;
@@ -183,8 +183,7 @@ section.paragraph-block:nth-child(1) {
 	padding: 5px
 }
 
-.article-block .img-block-first::after {
-	content: 'July 18 Spain';
+.article-block .img-block-first p {
 	display: block;
 	margin: -50px 0 0 20px;
 	color: #fff;
@@ -203,15 +202,14 @@ section.paragraph-block:nth-child(1) {
 	display: block;
 	position: absolute;
 	margin: 4% 0 0 10%;
-	padding: 5px
+	padding: 5px;
 }
 
-.article-block .img-block-second::after {
-	content: 'January 15 South France';
+.article-block .img-block-second p {
 	display: block;
 	margin: -50px 0 0 20px;
 	color: #fff;
-	font-size: 16px
+	font-size: 16px;
 }
 
 .gallery {
@@ -272,8 +270,7 @@ section.paragraph-block:nth-child(1) {
 	padding: 5px
 }
 
-.gallery .news-list-1::after {
-	content: 'January 18 Greece';
+.gallery .container p{
 	display: block;
 	position: absolute;
 	margin: -50px 0 0 20px;
@@ -297,15 +294,6 @@ section.paragraph-block:nth-child(1) {
 	padding: 5px
 }
 
-.gallery .news-list-2::after {
-	content: 'June 18 Italy';
-	display: block;
-	position: absolute;
-	margin: -50px 0 0 20px;
-	color: #fff;
-	font-size: 16px
-}
-
 .gallery .news-list-3::before {
 	content: '199 \2665';
 	font-size: 14px;
@@ -322,15 +310,6 @@ section.paragraph-block:nth-child(1) {
 	padding: 5px
 }
 
-.gallery .news-list-3::after {
-	content: 'December 11 USA';
-	display: block;
-	position: absolute;
-	margin: -50px 0 0 20px;
-	color: #fff;
-	font-size: 16px
-}
-
 .gallery .news-list-4::before {
 	content: '88 \2665';
 	font-size: 14px;
@@ -345,15 +324,6 @@ section.paragraph-block:nth-child(1) {
 	position: absolute;
 	margin: 20px 0 0 175px;
 	padding: 5px
-}
-
-.gallery .news-list-4::after {
-	content: 'May 25 Germany';
-	display: block;
-	position: absolute;
-	margin: -50px 0 0 20px;
-	color: #fff;
-	font-size: 16px
 }
 
 .load-news-button {
@@ -433,7 +403,7 @@ footer p {
 }
 
 @media screen and (max-width:1199px) {
-	header:before {
+	header::before {
 		padding: 57% 20px 0 720px
 	}
 
@@ -486,10 +456,6 @@ footer p {
 @media screen and (min-width:1600px) {
 	.header-wrap {
 		background-size: 150%;
-	}
-
-	header:before {
-		padding: 1200px 20px 0 950px;
 	}
 
 	.brand {
