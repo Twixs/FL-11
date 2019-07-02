@@ -105,19 +105,12 @@ nav .menu-icon {
 	object-fit: cover;
 	flex-grow: 1;
 }
-.container div.hover-1,
-.container div.hover-2,
-.container div.hover-3,
-.container div.hover-4,
-.container div.post-1,
-.container div.post-2,
-.container div.post-3,
-.container div.post-4
-{
+.container div {
 	position: relative;
 }
 .container div.hover-1::before,
-.container div.post-1::before {
+.container div.post-1::before,
+.container .post-1 p::before {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -128,7 +121,8 @@ nav .menu-icon {
 	opacity: 0;
 }
 .container div.hover-2::before,
-.container div.post-2::before {
+.container div.post-2::before,
+.container .post-2 p::before {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -139,7 +133,8 @@ nav .menu-icon {
 	opacity: 0;
 }
 .container div.hover-3::before,
-.container div.post-3::before {
+.container div.post-3::before,
+.container .post-3 p::before {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -150,7 +145,8 @@ nav .menu-icon {
 	opacity: 0;
 }
 .container div.hover-4::before,
-.container div.post-4::before {
+.container div.post-4::before,
+.container .post-4 p::before {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -167,7 +163,11 @@ nav .menu-icon {
 .container div.post-1:hover::before,
 .container div.post-2:hover::before,
 .container div.post-3:hover::before,
-.container div.post-4:hover::before
+.container div.post-4:hover::before,
+.container .post-1 p:hover::before,
+.container .post-2 p:hover::before,
+.container .post-3 p:hover::before,
+.container .post-4 p:hover::before
 {
 	opacity: 0.5;
 }
