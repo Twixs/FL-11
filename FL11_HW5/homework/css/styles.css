@@ -105,7 +105,15 @@ nav .menu-icon {
 	object-fit: cover;
 	flex-grow: 1;
 }
-.container div {
+.container div.hover-1,
+.container div.hover-2,
+.container div.hover-3,
+.container div.hover-4,
+.container div.post-1,
+.container div.post-2,
+.container div.post-3,
+.container div.post-4
+{
 	position: relative;
 }
 .container div.hover-1::before,
