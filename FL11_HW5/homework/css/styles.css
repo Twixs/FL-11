@@ -1,0 +1,372 @@
+/*:root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #162b4d;
+  --link: #fff;
+  --link--hover: #b8b8b8;
+  --bg-footer-color: #162b4d;
+}*/
+
+body {
+  font-family: roboto;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+
+* {
+	margin: 0;
+	padding: 0;	
+	font-weight: lighter;
+}
+body {
+	background-color: #0b192f;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+main{
+	display: flex;
+	flex-grow: 1;
+	margin: 1rem 0;
+	position: relative;
+}
+.header-wrap {
+	color: #ffffff;
+	background-color: #162b4d;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+nav{
+	width: 40%;
+	padding-right: 3rem;
+}
+nav ul{
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #ffffff;
+	padding: 2.5rem 1.5rem;
+}
+nav ul li a:hover{
+	background: rgba(184,184,184, 0.2);
+}
+nav .menu-icon {
+	display: none;
+}
+.brand {
+	font-size: 2rem;
+	padding: 2rem;
+}
+.brand span {
+	color: #B71757;
+}
+.posts-section {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	color: #ffffff;
+}
+.container:last-child{
+	flex-grow: 2;
+}
+.container:nth-child(even){
+	flex-direction: row-reverse;
+}
+.container div {
+	width: 50%;
+	height: auto;
+	flex-grow: 1;
+}
+.container div.date{
+	width: auto;
+}
+.container div img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	flex-grow: 1;
+}
+.container div.hover-1,
+.container div.hover-2,
+.container div.hover-3,
+.container div.hover-4,
+.container div.post-1,
+.container div.post-2,
+.container div.post-3,
+.container div.post-4
+{
+	position: relative;
+}
+.container div.hover-1::before,
+.container div.post-1::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+  	height: 100%;
+  	left: 0;
+  	top: 0;
+	background: #B71757;
+	opacity: 0;
+}
+.container div.hover-2::before,
+.container div.post-2::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+  	height: 100%;
+  	left: 0;
+  	top: 0;
+	background: #0D7E71;
+	opacity: 0;
+}
+.container div.hover-3::before,
+.container div.post-3::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+  	height: 100%;
+  	left: 0;
+  	top: 0;
+	background: #b1660e;
+	opacity: 0;
+}
+.container div.hover-4::before,
+.container div.post-4::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+  	height: 100%;
+  	left: 0;
+  	top: 0;
+	background: #d12767;
+	opacity: 0;
+}
+.container div.hover-1:hover::before,
+.container div.hover-2:hover::before,
+.container div.hover-3:hover::before,
+.container div.hover-4:hover::before,
+.container div.post-1:hover::before,
+.container div.post-2:hover::before,
+.container div.post-3:hover::before,
+.container div.post-4:hover::before
+{
+	opacity: 0.5;
+}
+.container div .date{
+	display: flex;
+	justify-content: flex-end;
+	font-size: 3rem;
+}
+.container:last-child div {
+	width: 100%;
+}
+.container div .date h2{
+	font-size: 2.8rem;
+	opacity: 1;
+	padding: 2rem 2rem 1rem 2rem;
+}
+.container:nth-child(even) div .date h2{
+	text-align: right;
+	left: 0;
+    width: 80%;
+}
+.container:last-child div .date h2{
+	left: 0;
+    width: 80%;
+}
+.container:last-child div .date{
+	justify-content: flex-start;
+}
+.container div .date p{
+	padding: 0.5rem 1rem;
+	opacity: 0.4;
+}
+.container:nth-child(even) div .date p{
+	padding: 0.5rem 1rem;
+}
+.container:last-child div .date p{
+	padding-left: 6rem;
+}
+.container div .date span{
+	font-size: 1.4rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.container div .date + p {
+	padding: 0 6rem 2rem 2rem;
+	line-height: 1.5;
+	opacity: 0.8;
+}
+.container:nth-child(even) div .date + p{
+	text-align: right;
+	padding: 0 2rem 2rem 6rem;
+	line-height: 1.5;
+}
+aside {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30%;
+}
+aside div {
+	background-color: #ffffff;
+	flex-grow: 1;
+	margin: 0 0 1rem 1rem;
+}
+aside div img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+aside div h3 {
+	padding: 2rem 2rem 0 2rem;
+	color:  #0b192f;
+	font-size: 1.4rem;
+	font-weight: 300;
+}
+aside div p {
+	padding: 1rem 2rem 2rem 2rem;
+	color:  #0b192f;
+	font-size: 1rem;
+}
+footer {
+	color: #ffffff;
+	background-color: #162b4d;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem;
+}
+footer div {
+	color: #ffffff;
+	opacity: 0.5;
+	line-height: 1.5;
+}
+footer .side-element{
+	color: #ffffff;
+	opacity: 0.5;
+}
+@media all and (max-width: 1400px){
+	.container div .date h2{
+		font-size: 2rem;
+	}
+	body {
+		margin: 0 0.5rem;
+	}
+}
+@media all and (max-width: 768px){
+	.header-wrap {
+		display: flex;
+		flex-flow: column-reverse wrap;
+		justify-content: center;
+	}
+	.brand {
+		padding: 2rem 0;
+	}
+	aside {
+		width: 40%;
+	}
+	nav {
+  		text-align: center;
+  		clear: both;
+	  	padding: 1rem;
+	}
+	nav ul {
+		display: none;
+	}
+	nav .menu-icon {
+		display: inline-block;
+		cursor: pointer;
+	}
+	nav .menu-icon .bar {
+		width: 20px;
+		height: 1px;
+		background-color: #ffffff;
+		margin: 6px 0;
+		transition: 0.4s;
+	}
+	.posts-section {
+		width: 60%;
+	}
+	.container,.container:nth-child(even) {
+		flex-direction: column;
+		position: relative;
+	}
+	.container div {
+		width: 100%;
+	}
+	.container div img {
+		margin-bottom: -0.5rem;
+	}
+	.container div .date p {
+		position: absolute;
+		bottom: 0;
+		left: 35%;
+		padding-bottom: 1rem;
+	}
+	.container:nth-child(even) div .date p {
+		padding: 1rem;
+	}
+	.container:last-child div .date p {
+		padding-left: 1rem; 
+	}
+	.container div .date {
+		justify-content: flex-start;
+	}
+	.container:nth-child(even) div .date + p,
+	.container div .date + p {
+		text-align: left;
+		padding: 0 2rem 9rem 2rem;
+	}
+	.container:nth-child(even) div .date h2 {
+		text-align: left;
+	}
+	footer {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	footer div, footer p {
+		text-align: center;
+	}
+}
+@media all and (max-width: 480px){
+	main {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.posts-section {
+		width: 100%;
+		order: 1;
+	}
+	aside {		
+		order: 2;
+		position: relative;
+		top: auto;
+		right: auto;
+		width: 100%;
+	}
+	aside div {
+		margin: 0 0 1rem 0;
+	}
+}
