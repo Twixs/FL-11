@@ -6,7 +6,7 @@ let c1 = prompt('Enter value C(x) = ', '');
 let c2 = prompt('Enter value C(y) = ', '');
 
 const two = 2;
-let centerX = (parseInt(a1) + parseInt(b1))/two;
-let centerY = (parseInt(a2) + parseInt(b2))/two;
+let centerX = (parseFloat(a1) + parseFloat(b1))/two;
+let centerY = (parseFloat(a2) + parseFloat(b2))/two;
 
-let result = +c1 === centerX && +c2 === centerY ? console.log(true) : console.log(false);
+let result = parseFloat(c1) === centerX && parseFloat(c2) === centerY ? console.log(true) : console.log(false);
