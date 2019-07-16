@@ -170,8 +170,8 @@ function getAmountOfAdultPeople(data) {
 	let adultPeople = new Array();
 	const year = 365;
 	for (let i = 0; i < data.length; i++) {
-		if (data[i].hasOwnProperty('birthday')) {
-			age[i] = data[i].birthday;
+		if (data[i].hasOwnProperty(' birthday ')) {
+			age[i] = data[i][' birthday '];
 		}
 	}
 
