@@ -1,27 +1,15 @@
-// const myFighter = new Fighter({name: 'John', damage: 20, hp: 100, agility: 25});
-// const myFighter = new Fighter({name: 'Jim', damage: 10, hp: 120, agility: 40});
 function Fighter(data) {
-	this.name = data['name'];
-	this.damage = data['damage'];
-	this.hp = data['hp'];
-	this.agility = data['agility'];
-	this.getName = function() {
-		return this.name
-	}
-	this.getDamage = function() {
-		return this.damage
-	}
-	this.getAgility = function() {
-		return this.agility
-	}
-	this.getHealth = function() {
-		return this.hp
-	}
+    this.getName = () => data.name;
+    this.getDamage = () => data.damage;
+    this.getHealth = () => data.hp;
+    this.getAgility = () => data.agility;
+    data.win = 0;
+    data.loss = 0;
 	this.attack = function(fighter) {
 		const RAND_MIN = 0;
 		const RAND_MAX = 100;
 		let check = getRandom(RAND_MIN, RAND_MAX);
-		if (check > fighter.agility) {
+		if (check > fighter.getAgility()) {
 			console.log(`${this.getName()} make ${this.getDamage()} damage to ${fighter.getName()}`)
 			fighter.dealDamage(this.getDamage());
 		} else {
@@ -33,33 +21,23 @@ function Fighter(data) {
 		}
 	}
 	this.logCombatHistory = function() {
-		console.log(`Name: ${this.name}, Wins: ${this.win}, Losses: ${this.loss}`)
+		console.log(`Name: ${this.getName()}, Wins: ${data.win}, Losses: ${data.loss}`)
 	}
 	this.heal = function(hpInc) {
-		this.hp += hpInc;
+		data.hp += hpInc;
 	}
 	this.dealDamage = function(damage) {
-		const dead = 0;
-		this.hp -= damage;
-		if (this.hp <= dead) {
-			this.hp = 0
+		const DEAD = 0;
+		data.hp -= damage;
+		if (data.hp <= DEAD) {
+			data.hp = 0
 		}
 	}
-	this.addWin = function() {
-		this.win++;
-		return this.win
-	}
-	this.addLoss = function() {
-		this.loss++;
-		return this.loss
-	}
+	this.addWin = () => data.win++;
+	this.addLoss = () => data.loss++;
 }
 
 function battle(fighter1, fighter2) {
-	fighter1.win = 0;
-	fighter1.loss = 0;
-	fighter2.win = 0;
-	fighter2.loss = 0;
 	const DEAD = 0;
 	if (fighter1.getHealth() === DEAD) {
 		return `${fighter1.getName()} is dead and can't fight.`
@@ -86,5 +64,4 @@ function battle(fighter1, fighter2) {
 			notDead = false;
 		}
 	}
-	
 }
