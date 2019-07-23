@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 11 - TODO Cat List</title>
+  <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+	<div id="root">
+		<h1>TODO Cat List</h1>
+		<p id="warning">Maximum item per list are created</p>
+		<div class="add-field">
+			<input id="add-item" type="text" name="add" placeholder="Add new action">
+			<button id="add"><i class="material-icons">add_box</i></button>			
+		</div>
+		<hr>
+		<ul id="list">
+			<li class="list-item">
+				<div>					
+					<input type="checkbox" id="findCat" name="findCat">
+					<label for="findCat">Find the cat</label>
+					<button onclick="changeLabel()"><i class="material-icons">edit</i></button>
+				</div>
+				<button><i class="material-icons">delete</i></button>
+			</li>
+			<li class="list-item">
+				<div>
+					<input type="checkbox" id="catCarry" name="catCarry">
+					<label for="catCarry">Prepare cat's carry</label>
+					<button class="edit" onclick="changeLabel()"><i class="material-icons">edit</i></button>
+				</div>
+				<button><i class="material-icons">delete</i></button>
+			</li>
+			<li class="list-item">
+				<div>
+					<input type="checkbox" id="bathCat" name="bathCat">
+					<label for="bathCat">Bath a cat</label>
+					<button onclick="changeLabel()"><i class="material-icons">edit</i></button>
+				</div>
+				<button><i class="material-icons">delete</i></button>
+			</li>			
+		</ul>
+	</div>
+
+	<script src="./src/app.js"></script>
+</body>
+</html>

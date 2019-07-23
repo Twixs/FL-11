@@ -1,0 +1,62 @@
+#root {
+	margin: 0 8%;
+}
+.add-field {
+	display: flex;
+	justify-content: space-between;
+}
+h1, p {
+	display: flex;
+	justify-content: center;
+	color: lightskyblue;
+}
+#warning {
+	display: none;
+	padding-bottom: 1%;
+}
+.add-field input {
+	padding: 2%;
+	width: 90%;
+	border-radius: 3px;
+	border-width: 1px;
+}
+.add-field i {
+	color: lightgrey;
+	font-size: 60px;
+}
+.add-field button{
+	padding: 0;
+	margin-left: 2%;
+    border-width: 0;
+    background-color: inherit;
+}
+hr{
+	width: 100%;
+	background-color: lightskyblue;
+	border-width: 0;
+	height: 8px;
+	opacity: 0.3;
+	margin: 2% auto;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+#list{
+	color: lightskyblue;
+}
+#list .list-item{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0.4% 0;
+}
+#list .list-item button{
+	padding: 0;
+    border-width: 0;
+    background-color: inherit;
+    color: lightskyblue;
+}
+#list .list-item div label{
+	font-size: 20px;
+}
