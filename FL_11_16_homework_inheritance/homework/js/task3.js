@@ -50,20 +50,20 @@ const charmander = new Charmander();
 const charmeleon = new Charmeleon();
 const charizard = new Charizard();
 
-console.log(charmander.getType()); // Fire
-console.log(charmander.getType() === charmeleon.getType()); // true
-console.log(charmeleon.getType() === charizard.getType()); // true
+console.log(charmander.getType());
+console.log(charmander.getType() === charmeleon.getType());
+console.log(charmeleon.getType() === charizard.getType());
 
-console.log(charmander.evolve().constructor === Charmeleon); // true
-console.log(charmeleon.evolve().constructor === Charizard); // true
+console.log(charmander.evolve().constructor === Charmeleon);
+console.log(charmeleon.evolve().constructor === Charizard);
 
-console.log(charmander.getSpecie()); // Lizard Pokémon
-console.log(charmeleon.getSpecie()); // Flame Pokémon
-console.log(charizard.getSpecie() === charmeleon.getSpecie()); // true
+console.log(charmander.getSpecie());
+console.log(charmeleon.getSpecie());
+console.log(charizard.getSpecie() === charmeleon.getSpecie());
 
-console.log(charmander.canFly()); // false
-console.log(charmander.canFly() === charmeleon.canFly()); // true
-console.log(charizard.canFly()); // true
+console.log(charmander.canFly());
+console.log(charmander.canFly() === charmeleon.canFly());
+console.log(charizard.canFly());
 
 
 function Pichu(){
@@ -98,15 +98,61 @@ Raichu.prototype.evolve = function() {
 }
 
 const pichu = new Pichu();
-console.log(pichu.getPokemonType()); // Pichu
+console.log(pichu.getPokemonType());
 
 const pikachu = pichu.evolve();
-console.log(pikachu.getPokemonType()); // Pikachu
-console.log(pikachu.constructor === Pikachu); // true
+console.log(pikachu.getPokemonType());
+console.log(pikachu.constructor === Pikachu);
 
 const raichu = pikachu.evolve();
-console.log(raichu.getPokemonType()); // Raichu
-console.log(raichu.constructor === Raichu); // true
+console.log(raichu.getPokemonType());
+console.log(raichu.constructor === Raichu);
 
 const raichu2 = raichu.evolve();
-console.log(raichu2 === raichu); // true
+console.log(raichu2 === raichu);
+
+
+function Squirtle(){
+	this.type = 'Water';
+	this.specie = 'Turtle Pokémon';
+	this.pokemon = 'Squirtle';
+}
+Squirtle.prototype = Object.create(Pokemon.prototype);
+Squirtle.prototype.constructor = Squirtle;
+Squirtle.prototype.evolve = function() {
+	return new Wartortle();
+}
+Squirtle.prototype.attack = function() {
+	return `${this.pokemon} has just given you a Skull Bash!`;
+}
+
+function Wartortle(){
+	Squirtle.call(this);
+	this.pokemon = 'Wartortle';
+}
+Wartortle.prototype = Object.create(Squirtle.prototype);
+Wartortle.prototype.constructor = Wartortle;
+Wartortle.prototype.evolve = function() {
+	return new Blastoise();
+}
+
+function Blastoise(){
+	Wartortle.call(this);
+	this.pokemon = 'Blastoise';
+}
+Blastoise.prototype = Object.create(Wartortle.prototype);
+Blastoise.prototype.constructor = Blastoise;
+Blastoise.prototype.evolve = function() {
+	return this;
+}
+
+const squirtle = new Squirtle();
+console.log(squirtle.getPokemonType());
+
+const wartortle = squirtle.evolve();
+console.log(wartortle.getPokemonType());
+console.log(wartortle.attack());
+
+const blastoise = wartortle.evolve();
+console.log(blastoise.getPokemonType());
+console.log(blastoise.constructor === Blastoise);
