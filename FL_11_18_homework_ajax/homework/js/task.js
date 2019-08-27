@@ -24,8 +24,9 @@ function displayHTML(json) {
 		for (let i = 0; i < json.length; i++) {
 			const list = document.createElement('ul');
 			let id = 'list-' + i;
-			list.setAttribute("id", id);
+			list.setAttribute('id', id);
 			body.appendChild(list);
+			addUserAvatar(id);
 			array[i] = json[i];
 			let thisObject = array[i];
 			for (let key in thisObject) {
@@ -84,15 +85,15 @@ function displayHTML(json) {
 			const btn = document.createElement('button');
 			btn.setAttribute('type', 'submit');
 			let btnClass = id;
-			btn.setAttribute("class", btnClass);
-			btn.setAttribute("id", 'edit');
+			btn.setAttribute('class', btnClass);
+			btn.setAttribute('id', 'edit');
 			btn.textContent = 'Edit';
 			list.appendChild(btn);
 
 			const deleteBtn = document.createElement('button');
-			deleteBtn.setAttribute("type", "submit");
-			deleteBtn.setAttribute("class", btnClass);
-			deleteBtn.setAttribute("id", 'del');
+			deleteBtn.setAttribute('type', 'submit');
+			deleteBtn.setAttribute('class', btnClass);
+			deleteBtn.setAttribute('id', 'del');
 			deleteBtn.textContent = 'Delete';
 			list.appendChild(deleteBtn);
 		}
@@ -101,7 +102,7 @@ function displayHTML(json) {
 			for (var j = 0; j < parentNode.length; j++) {
 				let child = parentNode[j].querySelectorAll('li');
 				let text = child[1].querySelector('p').innerHTML;
-				child[1].querySelector('p').innerHTML = `<a id="${j}">${text}</a>`;
+				child[1].querySelector('p').innerHTML = `<a id='${j}'>${text}</a>`;
 			}
 
 	addListeners();
@@ -111,21 +112,21 @@ function displayHTML(json) {
 function addListeners(){
 	let readyToEdit = document.querySelectorAll('#edit');
 	readyToEdit.forEach(function(item) {
-		item.addEventListener("click", function() {
+		item.addEventListener('click', function() {
 		editUser(item.className);
 	})
 	})
 
 	let readyToDelete = document.querySelectorAll('#del');
 	readyToDelete.forEach(function(item) {
-		item.addEventListener("click", function() {
+		item.addEventListener('click', function() {
 		deleteUser(item.className);
 	})
 	})
 
 	let redirect = document.querySelectorAll('a');
 	redirect.forEach(function(item) {
-		item.addEventListener("click", function() {
+		item.addEventListener('click', function() {
 			showPostsAndComments(item.id);
 		})
 	})
@@ -146,14 +147,14 @@ function editUser(className) {
 	const removeBtn = getList.querySelector('#edit');
 	removeBtn.style.display ='none';
 	let save = document.createElement('button');
-	save.setAttribute("type", "submit");
+	save.setAttribute('type', 'submit');
 	let btnClass = className;
-	save.setAttribute("class", btnClass);
-	save.setAttribute("id", 'save');
+	save.setAttribute('class', btnClass);
+	save.setAttribute('id', 'save');
 	save.textContent = 'Save';
 	getList.appendChild(save);
 
-	save.addEventListener("click", saveData);
+	save.addEventListener('click', saveData);
 }
 
 
@@ -177,15 +178,11 @@ function saveData() {
 
 
 	let prepRequest = {};
-	let keys = ['id', 'name', 'username', 'email', 'city',
-	'street', 'suite', 'phone', 'website'];
+	let keys = ['id', 'name', 'username', 'email', 'phone', 'website'];
 	prepRequest['id'] = data[0];
 	prepRequest['name'] = data[1];
 	prepRequest['username'] = data[2];
 	prepRequest['email'] = data[3];
-	prepRequest['city'] = data[4];
-	prepRequest['street'] = data[5];
-	prepRequest['suite'] = data[6];
 	prepRequest['phone'] = data[7];
 	prepRequest['website'] = data[8];
 	let convertToJSON = JSON.stringify(prepRequest);
@@ -195,7 +192,7 @@ function saveData() {
 	xhr.open("PUT", USERS +`/${++ID}`, true);
 	xhr.onload = function () {
 		let users = JSON.parse(xhr.responseText);
-		if (xhr.readyState == 4 && xhr.status == "200") {
+		if (xhr.readyState == 4 && xhr.status == '200') {
 			console.log(`Changes are saved for the user with id ${ID}`);
 		} else {
 			console.error(`Failed to edit user with id ${ID}`);
@@ -209,7 +206,7 @@ function saveData() {
 function deleteUser(className) {
 	startSpinner();
 	let ID = className.toString().slice(-1);
-	xhr.open("DELETE", USERS +`/${ID}`, true);
+	xhr.open('DELETE', USERS +`/${ID}`, true);
 	xhr.onload = function () {
 		let user = JSON.parse(xhr.responseText);
 		if (xhr.readyState == 4 && xhr.status == 200) {
@@ -292,4 +289,22 @@ function startSpinner() {
 function endSpinner() {
 	let spinner = document.querySelector('.lds-dual-ring');
 	spinner.style.display = 'none';
+}
+
+function addUserAvatar(id){
+	const catsURL = 'https://api.thecatapi.com/v1/images/search';
+	const user = document.getElementById(id);
+		fetch(catsURL)
+		.then(request => request.json())
+		.then(text => {
+			let avatar = document.createElement('img');
+			let divAvatar = document.createElement('div');
+			avatar.setAttribute('src',`${text[0].url}`);
+			divAvatar.appendChild(avatar);
+			user.appendChild(divAvatar);
+		})
+		.catch(err => {
+			console.log('Failed on', err);
+		});
+	
 }
