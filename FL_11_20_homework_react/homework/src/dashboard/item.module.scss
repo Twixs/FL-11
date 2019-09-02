@@ -1,0 +1,33 @@
+.Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Item {
+    margin: 4%;
+}
+
+.imageHolder {
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+}
+
+.imageHolderSmall {
+    position: absolute;
+    font-size: 24px;
+    margin: 0;
+    margin-top: -55px;
+    margin-left: 60px;
+
+}
+
+.imageHolderSmallest {
+    position: absolute;
+    font-size: 16px;
+    margin: 0;
+    margin-top: -45px;
+    margin-left: 55px;
+}

@@ -1,0 +1,11 @@
+.Container {
+  flex-direction: column;
+  text-align: start;
+  padding: 2%;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(193,217,235,0.3) 50%);
+}
+
+.imagesContainer {
+  display: flex;
+  flex-direction: row;
+}
