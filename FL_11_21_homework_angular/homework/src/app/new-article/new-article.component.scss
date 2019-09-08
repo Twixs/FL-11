@@ -1,0 +1,22 @@
+.divider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em 2em;
+}
+
+input,
+select,
+textarea {
+  margin-bottom: 1em;
+}

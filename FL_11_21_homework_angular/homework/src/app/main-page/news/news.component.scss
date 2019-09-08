@@ -1,0 +1,20 @@
+.card-context {
+  margin: 2em;
+
+  &-wrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+}
+
+.date-wrapper {
+  width: 40em;
+  padding-right: 5em;
+  text-align: right;
+}
+
+.image-size {
+  height: 10em;
+  padding-right: 1em;
+}

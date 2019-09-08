@@ -1,0 +1,30 @@
+<form #addArticle="ngForm">
+  <div class="form-group divider">
+    <div class="form-wrapper">
+      <label for="heading">Heading*</label>
+      <input type="text" class="form-control" id="heading" name="name" placeholder="Enter heading" ngModel required>
+      <label for="sourceCategory">Select Source Category*</label>
+      <select class="form-control" id="sourceCategory" name="source" ngModel required>
+        <option>Sport</option>
+        <option>Travel</option>
+      </select>
+      <label for="content">Content*</label>
+      <textarea class="form-control" id="content" name="description" rows="10" placeholder="Enter content" ngModel required></textarea>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <label for="date">Date*</label>
+        <input type="text" class="form-control" id="date" name="date" placeholder="Enter date (ex. 2019-07-08)" ngModel required>
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Enter author" ngModel>
+        <label for="sourceURL">Source URL</label>
+        <input type="text" class="form-control" id="sourceURL" name="sourceURL" placeholder="Enter source URL" ngModel>
+      </div>
+      <div class="mb-3 divider">
+        <button routerLink="/" type="button" class="btn btn-danger" (click)="onSubmit(addArticle.value)"
+        [disabled]="!addArticle.form.valid">Save</button>
+        <button routerLink="/" type="button" class="btn btn-danger" (click)="changeTitle()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

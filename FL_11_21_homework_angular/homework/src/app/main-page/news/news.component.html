@@ -1,0 +1,13 @@
+<div *ngFor="let item of news">
+  <div class="card card-context">
+    <div class="card-body card-context-wrapper">
+      <img class="image-size" src="{{item.img}}" alt="news">
+      <div>
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text card-text-1">{{item.description | slice: 0:150}}...</p>
+        <button routerLink="/article" class="btn btn-danger" (click)="openArticle(item)">Read More</button>
+      </div>
+      <p class="date-wrapper text-muted">{{getDate(item.date) | date}}</p>
+    </div>
+  </div>
+</div>

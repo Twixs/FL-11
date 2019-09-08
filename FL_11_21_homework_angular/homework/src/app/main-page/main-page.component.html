@@ -1,0 +1,29 @@
+<div class="actions">
+  <div class="btn-group dropdown">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      {{selectedSourceCategory}}
+    </button>
+    <div class="dropdown-menu">
+      <div class="dropdown-item" *ngFor="let source of sources" (click)="setSelection($event.target)">
+        {{source}}
+      </div>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Type your text..." aria-label="filtration"
+        aria-describedby="button-addon2" (keyup)="onKey($event)">
+      <div class="input-group-append">
+        <button class="btn btn-danger" type="button" id="button-addon2" (click)="filterNews()">Filter</button>
+      </div>
+    </div>
+  </div>
+
+  <button routerLink="/new-article" type="button" class="btn btn-danger" (click)="changeTitle()">Add Article</button>
+</div>
+
+<div class="news">
+  <app-news [news]="news" (article)=openArticle($event)></app-news>
+</div>
