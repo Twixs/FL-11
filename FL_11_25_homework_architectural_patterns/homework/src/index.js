@@ -4,29 +4,15 @@ import thunk from 'redux-thunk';
 import { Spinner } from './components/spinner';
 import USERS from './store/data';
 import { allReducers } from './reducers';
-import {fetchUsers} from './components/fetchUsers/fetchUsers';
-import {searchComponent} from './components/search/search';
+import { fetchUsers } from './components/fetchUsers/fetchUsers';
+import { searchComponent } from './components/search/search';
 import { fetchUsersPending, fetchUsersSuccess, fetchUsersError } from './actions/action'
-import { fetchData } from './store/mockAPI';
 
-const store = createStore(
-    allReducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import configureStore from './store'
+const strore = configureStore();
 
 const search = searchComponent();
 const displayData = fetchUsers();
-
-function loadData() {
-    return (dispatch) => {
-        fetchData()
-            .then(data => {
-                dispatch(fetchUsersSuccess(data))
-            })
-    }
-}
-
-loadData();
 
 // ** import {createStore} from 'redux';
 // ** import myTestReducer from './reducers/my_test_reducer.js';

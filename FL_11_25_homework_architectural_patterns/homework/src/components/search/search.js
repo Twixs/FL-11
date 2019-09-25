@@ -10,10 +10,13 @@ export const searchComponent = () => {
     const input = document.createElement("input");
     input.placeholder = "Enter user name";
     input.id = "search";
+    input.addEventListener('change', (event) =>{
+        console.log(event.target.value);
+    })
 
     searchBlock.appendChild(label);
     searchBlock.appendChild(input);
 
-    root.appendChild(searchBlock);
-    return root;
+    root.appendChild(searchBlock)
+    return searchBlock;
 }
