@@ -1,5 +1,5 @@
 import searchCounter from './search';
-import { usersReducer, getUsers, getUsersPending, getUsersError } from './fetch'
+import { usersReducer, getUsers, getUsersError } from './fetch'
 import { combineReducers } from 'redux';
 
 export const allReducers = combineReducers({

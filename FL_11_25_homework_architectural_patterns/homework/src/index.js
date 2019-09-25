@@ -14,12 +14,3 @@ const strore = configureStore();
 const search = searchComponent();
 const displayData = fetchUsers();
 
-// ** import {createStore} from 'redux';
-// ** import myTestReducer from './reducers/my_test_reducer.js';
-// ** import MyTestComponent from './components/my_test_component';
-
-// ** const store = createStore(myTestReducer);
-
-// ** const testComponent = new MyTestComponent(store);
-
-// ** testComponent.init()

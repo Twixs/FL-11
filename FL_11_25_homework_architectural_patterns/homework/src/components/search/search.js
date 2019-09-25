@@ -17,6 +17,6 @@ export const searchComponent = () => {
     searchBlock.appendChild(label);
     searchBlock.appendChild(input);
 
-    root.appendChild(searchBlock)
+    root.appendChild(searchBlock);
     return searchBlock;
 }
