@@ -1,15 +1,14 @@
-import USERS from '../../store/data';
 import headers from '../tableHeader/tableHeader';
 
-export const fetchUsers = () => {
-    const users = [...USERS];
+export const fetchUsers = (data) => {
+    const users = data;
     const root = document.getElementById("root");
     const usersTable = document.createElement("table");
     usersTable.align = "center";
     
     headers(usersTable);
-
-    users.forEach((user) => {
+    
+    users.map((user) => {
         const row = document.createElement("tr");
         const buttonCell = document.createElement("td");
         const button = document.createElement("button");

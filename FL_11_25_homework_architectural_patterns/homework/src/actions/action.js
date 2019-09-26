@@ -5,7 +5,7 @@ export const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR';
 export function fetchUsersSuccess(users) {
     return {
         type: FETCH_USERS_SUCCESS,
-        payload: users
+        payload: [...users]
     }
 }
 
