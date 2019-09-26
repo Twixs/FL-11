@@ -1,1 +1,0 @@
-import searchComponent from './search'
